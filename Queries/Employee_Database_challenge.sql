@@ -58,6 +58,19 @@ ORDER BY e.emp_no ASC;
 
 -- Additional Queries
 
+-- Group retiring individuals by title and department
+    SELECT d.dept_name,
+            rt.title,
+            COUNT(rt.title) AS retiring_count
+    INTO retirement_department
+    FROM dept_emp AS de
+        INNER JOIN departments AS d
+        ON de.dept_no = d.dept_no
+        INNER JOIN retirement_titles as rt
+        ON de.emp_no = rt.emp_no
+    GROUP BY d.dept_name, rt.title
+    ORDER BY dept_name, COUNT(rt.title) DESC;
+
 -- Use information in mentorship_eligibility table to create
 -- a new table where eligible mentors are split up by
 -- department and title
