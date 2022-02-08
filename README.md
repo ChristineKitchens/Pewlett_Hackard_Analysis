@@ -6,7 +6,7 @@
    - The number of employees eligible for a mentorship program.
 
 - To conduct analyses, tables containing employee and departmental infomation were imported into pgAdmin and queried using SQL. See "Resources" at the bottom of this file for more information.
-  - Queries used to execute the analyses can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
+  - Queries used to execute the analyses can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/e5cff3cdf253f108950b725fa0e89f413754b800/Queries/Employee_Database_challenge.sql).
 ## Pewlett Hackard Analysis Results
 ### Number of Retiring Employees by Title
 - There are a total of <b>133,776</b> employees preparing to retire.
@@ -92,6 +92,7 @@
 
 ## Resources
 - Data Source: 
+  - [departments.csv](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/e5cff3cdf253f108950b725fa0e89f413754b800/Data/departments.csv)
   - [employees.csv](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/employees.csv)
   - [titles.csv](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/titles.csv)
   - [retirement_titles.csv](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retirement_titles.csv)
