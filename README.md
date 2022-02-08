@@ -6,7 +6,7 @@
    - The number of employees eligible for a mentorship program.
 
 - To conduct analyses, tables containing employee and departmental infomation were imported into pgAdmin and queried using SQL. See "Resources" at the bottom of this file for more information.
-  - Queries used to execute analysis can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
+  - Queries used to execute the analysis can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
 ## Pewlett Hackard Analysis Results
 ### Number of Retiring Employees by Title
 - There are a total of <b>133,776</b> employees preparing to retire.
@@ -35,7 +35,7 @@
     - Based exclusively on total numbers, the number of new positions that need to be filled is <b>2 magnitudes greater</b> than the amount of employees eligible for the mentorship program.
 - While the requested analyses will aid management in understanding the scope of the upcoming wave of retirements, some further queries could be made of data to better strategize a response to employee turnover. See the following section for additional analyses.
 ### Additional Analyses
-  - An additional query to make of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/a1abb33b03b2ff3175861a7d524f2724ef941c88/Data/retirement_department.csv) as well. The following query was executed to this end:
+  - An additional query of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/a1abb33b03b2ff3175861a7d524f2724ef941c88/Data/retirement_department.csv) as well. The following query was executed to this end:
     ```
     -- Group retiring individuals by title and department
     SELECT d.dept_name,
@@ -50,6 +50,7 @@
     GROUP BY d.dept_name, rt.title
     ORDER BY dept_name, COUNT(rt.title) DESC;
     ```
+    - While all departments will need to fill several thousand job positions, the top three hardest hit departments will be Development, Production, and Sales (37,508, 32,574, and 23,524. respectively).
   - Further, while the requested deliverables separately analyzed the number of employees retiring and the number eligible employees for the mentorship program, it's critical to compare these two numbers directly. Given the disparity between the magnitude of employees reaching retirement age versus eligible mentors, directly comparing the groups across a departmental and title level will help identify where shortfalls are greatest.
     ```
     -- Use information in mentorship_eligibility table to create
