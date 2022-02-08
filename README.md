@@ -37,6 +37,21 @@
 ### Additional Analyses
   - An additional query to make of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Data/mentorship_department.csv) as well. The following query was executed to this end:
     ```
+    -- Group retiring individuals by title and department
+    SELECT d.dept_name,
+            rt.title,
+            COUNT(rt.title) AS retiring_count
+    INTO retirement_department
+    FROM dept_emp AS de
+        INNER JOIN departments AS d
+        ON de.dept_no = d.dept_no
+        INNER JOIN retirement_titles as rt
+        ON de.emp_no = rt.emp_no
+    GROUP BY d.dept_name, rt.title
+    ORDER BY dept_name, COUNT(rt.title) DESC;
+    ```
+  - Further, while the requested deliverables separately analyzed the number of employees retiring and the number eligible employees for the mentorship program, it's critical to compare these two numbers directly. Given the disparity between the magnitude of employees reaching retirement age versus eligible mentors, directly comparing the groups across a departmental and title level will help identify where shortfalls are greatest.
+    ```
     -- Use information in mentorship_eligibility table to create
     -- a new table where eligible mentors are split up by
     -- department and title
@@ -49,9 +64,7 @@
         ON de.dept_no = d.dept_no
     GROUP BY d.dept_name, me.title
     ORDER BY d.dept_name, COUNT(me.title) DESC;
-    ```
-  - Further, while the requested deliverables separately analyzed the number of employees retiring and the number eligible employees for the mentorship program, it's critical to compare these two numbers directly. Given the disparity between the magnitude of employees reaching retirement age versus eligible mentors, directly comparing the groups across a departmental and title level will help identify where shortfalls are greatest.
-    ```
+
     -- Merge mentorship_department table with unique_titles table
     -- of retiring employees to match up the number of potential mentors
     -- with the number of retiring employees.
@@ -72,7 +85,8 @@
     ORDER BY d.dept_name, COUNT(ut.title) DESC;
     ```
 
-    - A cursory glance at the [resulting table](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_mentor_comparison.csv) reflects high level observations: the number of individuals eligible to act as mentors is dwarfed by the number of retiring individuals. While a mentorship program is a great idea for onboarding new employees, criteria and terms surrounding potential mentor positions should be modified, particularly for Staff and Engineer positions. For example, individuals eligible for mentor positions should be able to opt in for part-time or full-time positions. Further, eligibility should be expanded to employees who have demonstrated sufficient knowledge and proficiency in relevant positions. Acceptance should be accompanied by a salary increase to account for increased responsibilities. 
+    - A cursory glance at the [resulting table](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_mentor_comparison.csv) reflects high level observations: even on a departmental level, the number of individuals eligible to act as mentors is dwarfed by the number of retiring individuals. While disparities are considerably smaller for certain titles in certain departments (e.g. Engineers in the Research Department), even the the smallest gaps result in a ratio of 15 mentees to a single mentor. Directly mentoring 15 individuals full-time would be challenging, let alone part-time as the current mentor program is outlined.
+    - A mentorship program is a great idea for onboarding new employees. However, criteria and terms surrounding potential mentor positions should be modified, particularly for Staff and Engineer positions. For example, individuals eligible for mentor positions should be able to opt in for part-time or full-time positions. Further, eligibility should be expanded to employees who have demonstrated sufficient knowledge and proficiency in relevant positions. Acceptance should be accompanied by a salary increase to account for increased responsibilities. 
 
 
 ## Resources
