@@ -32,8 +32,8 @@
     - The company will need to fill <b>133,776</b> positions in the wake of the retirement wave.
     - The two titles with the highest number of soon to retire employees are <b>Senior Engineer</b> and <b>Senior Staff</b>.
     - <b>1,549</b> employees are eligible for the mentorship program
-    - Based exclusively on total numbers, the number of new positions that need to be filled is <b>2 magnitudes greater</b> than the amount of employees eligible for the mentorship program.
-- While the requested analyses will aid management in understanding the scope of the upcoming wave of retirements, some further queries could be made of data to better strategize a response to employee turnover. See the following section for additional analyses.
+    - The number of new positions that will need to be filled is <b>2 orders of magnitude greater</b> than the amount of employees eligible for the mentorship program.
+- While the requested analyses will aid management in understanding the scope of the upcoming wave of retirements, some further queries could be made of the data to better strategize a response to employee turnover. See the following section for additional analyses.
 ### Additional Analyses
   - An additional query of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/a1abb33b03b2ff3175861a7d524f2724ef941c88/Data/retirement_department.csv) as well. The following query was executed to this end:
     ```
@@ -86,8 +86,8 @@
     ORDER BY d.dept_name, COUNT(ut.title) DESC;
     ```
 
-    - A cursory glance at the [resulting table](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_mentor_comparison.csv) reflects high level observations: even on a departmental level, the number of individuals eligible to act as mentors is dwarfed by the number of retiring individuals. While disparities are considerably smaller for certain titles in certain departments (e.g. Engineers in the Research Department), even the the smallest gaps result in a ratio of 15 mentees to a single mentor. Directly mentoring 15 individuals full-time would be challenging, let alone part-time as the current mentor program is outlined.
-    - A mentorship program is a great idea for onboarding new employees. However, criteria and terms surrounding potential mentor positions should be modified, particularly for Staff and Engineer positions. For example, individuals eligible for mentor positions should be able to opt in for part-time or full-time positions. Further, eligibility should be expanded to employees who have demonstrated sufficient knowledge and proficiency in relevant positions. Acceptance should be accompanied by a salary increase to account for increased responsibilities. 
+    - A cursory glance at the [resulting table](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_mentor_comparison.csv) reflects high level observations: even on a departmental level, the number of individuals eligible to act as mentors is dwarfed by the number of retiring individuals. While disparities are considerably smaller for certain titles in certain departments (e.g. Engineers in the Research Department), even the the smallest gaps result in a ratio of 15 mentees to a single mentor. Directly mentoring 15 individuals full-time would be challenging, let alone part-time as is currently outlined in the mentor program.
+    - A mentorship program is a great idea for onboarding new employees. However, criteria and terms surrounding potential mentor positions should be modified, particularly for Staff and Engineer positions. For example, individuals eligible for mentor positions should be able to opt in for part-time or full-time mentor positions. Further, eligibility should be expanded to employees who have demonstrated sufficient knowledge and proficiency in relevant positions. Acceptance should be accompanied by a salary increase to account for increased responsibilities. 
 
 
 ## Resources
