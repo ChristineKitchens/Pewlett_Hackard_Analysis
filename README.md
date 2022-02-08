@@ -1,7 +1,7 @@
 # Pewlett Hackard Analysis
 
 ## Overview of Pewlett Hackard Analysis
-- Pewlett Hackard noticed that several current employees are nearly at retirement age. In anticipation of the number of openings that will accompany the wave of retiring employees, management requested two deliverables:
+- Pewlett Hackard noticed that several employees are nearing retirement age. In anticipation of the number of openings that will accompany the wave of retiring employees, management requested two deliverables:
    - The number of retiring employees by title.
    - The number of employees eligible for a mentorship program.
 
