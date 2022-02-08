@@ -2,15 +2,14 @@
 
 ## Overview of Pewlett Hackard Analysis
 - Pewlett Hackard noticed that several current employees are nearly at retirement age. In anticipation of the number of openings that will accompany the wave of retiring employees, management requested two deliverables:
-   1) The number of retiring employees by title
+   1) The number of retiring employees by title.
    2) The number of employees eligible for a mentorship program.
 
-- Queries used to execute analysis can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
+- To conduct analyses, tables containing employee and departmental infomation were imported into pgAdmin and queried using SQL. See "Resources" at the bottom of this file for more information.
+  - Queries used to execute analysis can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
 ## Pewlett Hackard Analysis Results
-There is a bulleted list with four major points from the two analysis deliverables.
-
 ### Number of Retiring Employees by Title
-- There are a total of 133,776 employees preparing to retire.
+- There are a total of <b>133,776</b> employees preparing to retire.
 - The number of retiring employees by title is as follows:
 
     | Title  | Count |
@@ -26,25 +25,16 @@ There is a bulleted list with four major points from the two analysis deliverabl
   - The csv file containing the same data can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_titles.csv)
 - The two titles with the highest number of soon to be retired employees are <b>Senior Engineer</b> and <b>Senior Staff</b>.
 ### Employees Eligible for the Mentorship Program
-- There are 1549 employees eligible for the mentorship program (detailed data on each employee can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/mentorship_eligibility.csv))
-- Grouping by eligible mentors by title yields the following breadkdown:
-
-    | Title  | Count |
-    | ------------- | ------------- |
-    | Senior Staff | 569 |
-    | Engineer | 501 |
-    | Senior Engineer | 169 |
-    | Staff | 155 |
-    | Assistant Engineer | 78 |
-    | Technique Leader | 77 |
+- There are <b>1,549</b> employees eligible for the mentorship program (detailed data on each employee can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/mentorship_eligibility.csv))
+- Based exclusively on total numbers, the number of new positions that need to be filled is <b>2 magnitudes greater</b> than the amount of employees eligible for the mentorship program.
 ## Pewlett Hackard Analysis Summary
 - Analyses of information in the employee database yielded four insights:
-    1) 133,776 employees are near retirement
-    2) The two titles with the highest number of soon to be retired employees are <b>Senior Engineer</b> and <b>Senior Staff</b>.
-    4) 1,549 employees are eligible for the mentorship program
-    5) Example
+    - The company will need to fill <b>133,776</b> positions in the wake of the retirement wave.
+    - The two titles with the highest number of soon to retire employees are <b>Senior Engineer</b> and <b>Senior Staff</b>.
+    - <b>1,549</b> employees are eligible for the mentorship program
+    - Based exclusively on total numbers, the number of new positions that need to be filled is <b>2 magnitudes greater</b> than the amount of employees eligible for the mentorship program.
 - While the requested analyses will aid management in understanding the scope of the upcoming wave of retirements, some further queries could be made of data to better strategize a response to employee turnover. See the following section for additional analyses.
-- Additional Analyses
+### Additional Analyses
   - An additional query to make of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Data/mentorship_department.csv) as well. The following query was executed to this end:
     ```
     -- Use information in mentorship_eligibility table to create
@@ -60,7 +50,7 @@ There is a bulleted list with four major points from the two analysis deliverabl
     GROUP BY d.dept_name, me.title
     ORDER BY d.dept_name, COUNT(me.title) DESC;
     ```
-  - Further, while the requested deliverables separately analyzed the number of employees retiring and the number eligible employees for the mentorship program, it's critical to compare these two numbers directly. Given the magnitude of employees reaching retirement age, it needs to be determined if the number of eligible mentors is high enough to manage the training of new hires.
+  - Further, while the requested deliverables separately analyzed the number of employees retiring and the number eligible employees for the mentorship program, it's critical to compare these two numbers directly. Given the disparity between the magnitude of employees reaching retirement age versus eligible mentors, directly comparing the groups across a departmental and title level will help identify where shortfalls are greatest.
     ```
     -- Merge mentorship_department table with unique_titles table
     -- of retiring employees to match up the number of potential mentors
@@ -82,7 +72,7 @@ There is a bulleted list with four major points from the two analysis deliverabl
     ORDER BY d.dept_name, COUNT(ut.title) DESC;
     ```
 
-    - A cursory glance at the [resulting table](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_mentor_comparison.csv) shows a pitfall in the mentorship program: the number of individuals eligible to act as mentors is dwarfed by the number of retiring individuals. While a mentorship program is a great idea for onboarding new employees, criteria and terms surrounding potential mentor positions should be modified. For example, individuals eligible for mentor positions should be able to opt in for part-time or full-time positions. Further, eligibility should be expanded to employees who have demonstrated sufficient knowledge and proficiency in relevant positions. Acceptance should be accompanied by a salary increase to account for increased responsibilities. 
+    - A cursory glance at the [resulting table](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/c73ac6ee0ae338977a8a58e1c548cc062a3ec253/Data/retiring_mentor_comparison.csv) reflects high level observations: the number of individuals eligible to act as mentors is dwarfed by the number of retiring individuals. While a mentorship program is a great idea for onboarding new employees, criteria and terms surrounding potential mentor positions should be modified, particularly for Staff and Engineer positions. For example, individuals eligible for mentor positions should be able to opt in for part-time or full-time positions. Further, eligibility should be expanded to employees who have demonstrated sufficient knowledge and proficiency in relevant positions. Acceptance should be accompanied by a salary increase to account for increased responsibilities. 
 
 
 ## Resources
