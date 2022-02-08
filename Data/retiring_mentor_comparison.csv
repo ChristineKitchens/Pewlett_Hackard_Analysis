@@ -1,0 +1,39 @@
+dept_name,title,retiring_count,mentor_count
+Customer Service,Senior Staff,3795,85
+Customer Service,Staff,1164,25
+Customer Service,Senior Engineer,545,4
+Customer Service,Engineer,188,10
+Customer Service,Technique Leader,64,3
+Customer Service,Assistant Engineer,22,1
+Development,Senior Engineer,12980,93
+Development,Engineer,4679,257
+Development,Technique Leader,1795,34
+Development,Assistant Engineer,550,40
+Development,Senior Staff,329,9
+Development,Staff,118,2
+Finance,Senior Staff,3226,61
+Finance,Staff,973,13
+Human Resources,Senior Staff,3315,86
+Human Resources,Staff,1036,21
+Marketing,Senior Staff,3701,104
+Marketing,Staff,1115,22
+Production,Senior Engineer,11256,73
+Production,Engineer,3975,208
+Production,Technique Leader,1597,35
+Production,Assistant Engineer,467,33
+Production,Senior Staff,390,6
+Production,Staff,99,1
+Quality Management,Senior Engineer,3142,21
+Quality Management,Engineer,1149,58
+Quality Management,Technique Leader,437,10
+Quality Management,Assistant Engineer,137,8
+Research,Senior Staff,3211,71
+Research,Staff,981,21
+Research,Senior Engineer,664,3
+Research,Engineer,244,16
+Research,Technique Leader,94,2
+Research,Assistant Engineer,21,
+Research,Manager,1,
+Sales,Senior Staff,9663,210
+Sales,Staff,2985,62
+Sales,Manager,1,
