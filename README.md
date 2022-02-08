@@ -6,7 +6,7 @@
    - The number of employees eligible for a mentorship program.
 
 - To conduct analyses, tables containing employee and departmental infomation were imported into pgAdmin and queried using SQL. See "Resources" at the bottom of this file for more information.
-  - Queries used to execute the analysis can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
+  - Queries used to execute the analyses can be found [here](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Queries/Employee_Database_challenge.sql).
 ## Pewlett Hackard Analysis Results
 ### Number of Retiring Employees by Title
 - There are a total of <b>133,776</b> employees preparing to retire.
