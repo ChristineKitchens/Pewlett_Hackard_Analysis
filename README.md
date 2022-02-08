@@ -35,7 +35,7 @@
     - Based exclusively on total numbers, the number of new positions that need to be filled is <b>2 magnitudes greater</b> than the amount of employees eligible for the mentorship program.
 - While the requested analyses will aid management in understanding the scope of the upcoming wave of retirements, some further queries could be made of data to better strategize a response to employee turnover. See the following section for additional analyses.
 ### Additional Analyses
-  - An additional query to make of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/550eced8f34750c3aed6479a1ac49ebb3c2a437d/Data/mentorship_department.csv) as well. The following query was executed to this end:
+  - An additional query to make of the data could be to breakdown the number of retiring employees not just by title, but [by department](https://github.com/InRegards2Pluto/Pewlett_Hackard_Analysis/blob/a1abb33b03b2ff3175861a7d524f2724ef941c88/Data/retirement_department.csv) as well. The following query was executed to this end:
     ```
     -- Group retiring individuals by title and department
     SELECT d.dept_name,
